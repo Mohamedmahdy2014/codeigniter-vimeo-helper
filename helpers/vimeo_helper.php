@@ -57,7 +57,7 @@ if ( ! function_exists('vimeo_data'))
 		if ( $url_id == '' ) return FALSE;
 		
 		$id = ( ! _isValidURL( $url_id)) ? $url_id : vimeo_id( $url_id );
-		$api_query = @file_get_contents("http://vimeo.com/api/v2/video/$id.php");
+		$api_query = @file_get_contents("http://vimeo.com/api/v2/video/".$id.".php");
 		return ($api_query === FALSE) ? FALSE : unserialize($api_query);
 	}
 }
